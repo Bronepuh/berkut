@@ -11,15 +11,15 @@ const { Content } = Layout;
 
 const App: React.FC = () => {
 	return (
-		<Router basename={BASE_PATH}>
+		<Router>
 			<Layout style={{ minHeight: "100vh" }}>
 				<AppHeader />
 				<Content>
 					<Routes>
 						<Route path="/" element={<Navigate to={`/${BASE_PATH}/`} replace />} />
 						<Route path={`/${BASE_PATH}/`} element={<HomePage />} />
-						<Route path={`/${BASE_PATH}/photos/:id`} element={<PhotoDetailPage />} />
 						<Route path={`/${BASE_PATH}/search`} element={<SearchResultsPage />} />
+						<Route path={`/${BASE_PATH}/photos/:id`} element={<PhotoDetailPage />} />
 						<Route path={`/${BASE_PATH}/favorites`} element={<FavoritesPage />} />
 					</Routes>
 				</Content>
