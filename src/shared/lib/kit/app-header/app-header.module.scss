@@ -1,0 +1,66 @@
+.wrapper {
+	width: 100%;
+	height: 132px;
+	background-color: black;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	height: 132px;
+	background-color: black;
+	width: 100%;
+	max-width: 1480px;
+	margin: 0 auto;
+
+	.logo {
+		width: 185px;
+		height: 72px;
+	}
+
+	.headerControls {
+		display: flex;
+		gap: 16px;
+
+		.controlButton {
+			color: white;
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			transition: opacity 0.3s;
+			font-size: 18px;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			span {
+				margin-left: 4px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.logo {
+		width: 84px !important;
+		height: 32px !important;
+
+		img {
+			width: 84px !important;
+			height: 32px !important;
+		}
+	}
+
+	.buttonText {
+		display: none;
+	}
+
+	.headerControls {
+		span {
+			font-size: 24px;
+		}
+	}
+}

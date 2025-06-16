@@ -1,0 +1,21 @@
+.pageContainer {
+	display: flex;
+	justify-content: center;
+	padding: 24px 16px;
+	width: 100%;
+}
+
+.contentContainer {
+	width: 100%;
+	max-width: 1480px;
+}
+
+.header {
+	margin-top: 25px;
+	text-align: center;
+
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 8px;
+	}
+}

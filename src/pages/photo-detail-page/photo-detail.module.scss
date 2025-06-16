@@ -1,0 +1,270 @@
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+	color: #fff;
+}
+
+.pageContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	padding: 40px;
+	z-index: 10;
+}
+
+// Контейнер для фона
+.backgroundOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+
+	// Размытие фона
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: inherit;
+		filter: blur(10px);
+		transform: scale(1.1);
+		z-index: 1;
+	}
+}
+
+// Темный градиентный оверлей
+.darkGradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+	z-index: 2;
+}
+
+// Верхняя панель с пользователем и кнопками
+.topPanel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 1480px;
+	margin: 0 auto 40px;
+	padding: 20px;
+	background: rgba(30, 30, 30, 0.7);
+	border-radius: 8px;
+	backdrop-filter: blur(4px);
+}
+
+.userInfo {
+	display: flex;
+	align-items: center;
+	font-family: "Roboto", sans-serif;
+}
+
+.userAvatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	margin-right: 20px;
+	object-fit: cover;
+}
+
+.userText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.name {
+	font-weight: 500;
+	font-size: 24px;
+	margin-bottom: 5px;
+	letter-spacing: 0.5px;
+}
+
+.userName {
+	font-weight: 400;
+	font-size: 18px;
+	opacity: 0.8;
+}
+
+// Блок с кнопками
+.actions {
+	display: flex;
+	gap: 15px;
+}
+
+.downloadButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	padding: 0 25px;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	background-color: rgba(255, 242, 0, 1) !important;
+	color: black !important;
+	border: none;
+
+	.anticon {
+		margin-right: 8px;
+		font-size: 18px;
+	}
+}
+
+.favoriteButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px !important;
+	height: 50px;
+	padding: 0;
+	font-size: 24px;
+	font-weight: 500;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+// Стили для адаптации кнопки скачивания
+.buttonText {
+	display: inline-block;
+}
+
+@media (max-width: 860px) {
+	.downloadButton {
+		// Скрываем текст
+		.buttonText {
+			display: none;
+		}
+
+		// Убираем отступ справа от иконки
+		.anticon {
+			margin-right: 0;
+		}
+
+		// Делаем кнопку квадратной
+		width: 50px !important;
+		padding: 0 !important;
+	}
+
+	.backgroundOverlay {
+		display: none;
+	}
+}
+
+.contentContainer {
+	width: 100%;
+	max-width: 1480px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.loadingContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.notFound {
+	padding: 24px;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #ff4d4f;
+}
+
+.photoCard {
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+	max-width: 100%;
+	background: rgba(20, 20, 20, 0.5);
+	backdrop-filter: blur(4px);
+}
+
+.imageContainer {
+	position: relative;
+	width: 100%;
+	padding-top: 75%; /* Соотношение 4:3 */
+}
+
+.photoImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	display: block;
+}
+
+// Адаптация для мобильных
+@media (max-width: 768px) {
+	.pageContainer {
+		padding: 20px;
+	}
+
+	.topPanel {
+		gap: 20px;
+		padding: 15px;
+		margin-bottom: 20px;
+	}
+
+	.actions {
+		width: 100%;
+		flex-direction: row;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.downloadButton,
+	.favoriteButton {
+		height: 45px;
+	}
+
+	.downloadButton {
+		width: auto;
+	}
+
+	.userInfo {
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.userText {
+		align-items: center;
+	}
+
+	.userAvatar {
+		width: 60px;
+		height: 60px;
+		margin-right: 15px;
+	}
+
+	.name {
+		font-size: 18px;
+	}
+
+	.userName {
+		font-size: 14px;
+	}
+}
