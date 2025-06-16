@@ -11,7 +11,7 @@ const { Content } = Layout;
 
 const App: React.FC = () => {
 	return (
-		<Router basename={process.env.PUBLIC_URL}>
+		<Router basename={BASE_PATH}>
 			<Layout style={{ minHeight: "100vh" }}>
 				<AppHeader />
 				<Content>

@@ -1,1 +1,1 @@
-export const BASE_PATH = "bercut";
+export const BASE_PATH = import.meta.env.BASE_URL ?? "";

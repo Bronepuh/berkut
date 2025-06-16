@@ -12,7 +12,7 @@ export const SearchBar: React.FC = () => {
 
 	const handleSearch = () => {
 		if (query.trim()) {
-			navigate(`/bercut/search?q=${encodeURIComponent(query.trim())}`);
+			navigate(`/berkut/search?q=${encodeURIComponent(query.trim())}`);
 		}
 	};
 
