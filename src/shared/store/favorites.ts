@@ -1,6 +1,6 @@
+import type { SimplePhoto } from "src/entities/photo-card/model/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { SimplePhoto } from "@shared/transport/types";
 
 interface FavoritesState {
 	favorites: SimplePhoto[];

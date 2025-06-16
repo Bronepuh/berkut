@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useFavoritesStore } from "@shared/store/favorites";
-import type { SimplePhoto } from "@shared/transport/types";
 import styles from "./photo-card.module.scss";
 import { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import { BASE_PATH } from "@shared/utils/constants";
+import type { SimplePhoto } from "../model/types";
 
 export const PhotoCard: React.FC<{ photo: SimplePhoto }> = ({ photo }) => {
 	const navigate = useNavigate();
